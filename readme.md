@@ -1,7 +1,7 @@
 ## Entrenamiento R
 
 #### Objetivos de hoy
-* R + S4 + C++ + Package
+* Package R: S4 + C++
 * Join y dplyr con .dta
 * R + Maps
 
