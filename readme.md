@@ -1,4 +1,4 @@
-### Entrenamiento R
+## Entrenamiento R
 
 #### Objetivos de hoy
 * R + S4 + C++ + Package
