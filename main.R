@@ -23,6 +23,7 @@ getOption("width")
 
 # Directorios
 file.create("test.R")
+file.create("notes.md")
 file.create("readme.md")
 file.create("inform.qmd")
 file.create(".gitignore")
@@ -98,11 +99,6 @@ mm %>%
   .$cyl %>%
   table()
 
-mm %>%
-  mutate(ncyl = cyl) %>%
-  filter(ncyl == 5) %>%
-  select(cyl)
-
 mm %>% cross_cases(fl, mnf)
 mm %>% cross_cases(fl, nfl)
 
@@ -149,7 +145,54 @@ mm %<>%
     )
   )
 
-mm %>% sapply(is.numeric)  %>% class
+mm %>%
+  sapply(is.numeric) %>%
+  class()
 
-nmm<-
-mm %>% select(is.numeric)
+nmm <-
+  mm %>% select(is.numeric)
+
+mat_a <- 1:3
+
+a <-
+  mm %>%
+  select(where(is.character)) %>%
+  names()
+
+a %>%
+  walk(function(coln) {
+    mm %>%
+      pull(coln) %>%
+      fct_count() %>%
+      print()
+  })
+
+for (x in a) {
+  cat("\n")
+  print(paste0("Variable: ", x))
+  print(
+    mm %>%
+      pull(x) %>%
+      fct_count() %>%
+      sheet()
+  )
+  cat("\n")
+}
+
+for (x in a) {
+  cat("\n")
+  print(paste0("Variable: ", x))
+  print(
+    fct_count(mm[[x]]) %>%
+      sheet()
+  )
+  cat("\n")
+}
+
+cat(a)
+
+
+library(palmerpenguins)
+p <- penguins
+
+p %>% glimpse()

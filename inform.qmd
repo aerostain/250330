@@ -1,0 +1,46 @@
+---
+title: "Informe R"
+author: "R1ck"
+format:
+  html:
+    toc: true
+    toc-location: left
+---
+
+## Informe R
+
+```{r}
+#| eval: true
+#| echo: true
+#| message: false
+#| warning: false
+library(tidyverse)
+```
+
+```{r}
+#| eval: true
+#| echo: true
+#| message: false
+#| warning: false
+
+mpg %>% str()
+```
+
+
+```{r}
+#| eval: true
+#| echo: true
+#| message: false
+#| warning: false
+a <- 1:3
+print(a)
+```
+
+
+```{r}
+#| eval: true
+#| echo: true
+#| message: false
+#| warning: false
+
+```
